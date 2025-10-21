@@ -5,6 +5,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
@@ -16,26 +17,15 @@ public class JavaFxApplication extends Application {
 
     @Override
     public void start(Stage window) {
-        BorderPane layout = new BorderPane();
+        TextField leftText = new TextField("left");
+        TextField rightText = new TextField("right");
+        Button button = new Button("copy");
 
-        HBox buttons = new HBox();
-        buttons.setSpacing(10);
-        buttons.getChildren().add(new Button("First"));
-        buttons.getChildren().add(new Button("Second"));
-        buttons.getChildren().add(new Button("Third"));
+        HBox componentGroup = new HBox();
+        componentGroup.setSpacing(20);
+        componentGroup.getChildren().addAll(leftText, button, rightText);
 
-        VBox texts = new VBox();
-        texts.setSpacing(10);
-        texts.getChildren().add(new Label("First"));
-        texts.getChildren().add(new Label("Second"));
-        texts.getChildren().add(new Label("Third"));
-
-        layout.setTop(buttons);
-        layout.setLeft(texts);
-
-        layout.setCenter(new TextArea("Hello World"));
-
-        Scene view = new Scene(layout);
+        Scene view = new Scene(componentGroup);
 
         window.setScene(view);
         window.show();
