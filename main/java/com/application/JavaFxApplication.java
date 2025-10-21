@@ -18,11 +18,21 @@ public class JavaFxApplication extends Application {
 
     @Override
     public void start(Stage window) {
-        Parameters params = getParameters();
-        String organization = params.getNamed().get("organization");
-        String course = params.getNamed().get("course");
+        Button back = new Button("Back ..");
+        Button forth = new Button(".. Forward");
 
-        window.setTitle(organization + ": " + course);
+        Scene first = new Scene(back);
+        Scene second = new Scene(forth);
+
+        back.setOnAction(event -> {
+            window.setScene(second);
+        });
+
+        forth.setOnAction(event -> {
+            window.setScene(first);
+        });
+
+        window.setScene(first);
         window.show();
     }
 
