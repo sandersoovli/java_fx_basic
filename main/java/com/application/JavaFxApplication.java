@@ -6,18 +6,18 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
 public class JavaFxApplication extends Application {
 
     @Override
     public void start(Stage window) {
-        BorderPane layout = new BorderPane();
-        layout.setTop(new Label("top"));
-        layout.setRight(new Label("right"));
-        layout.setBottom(new Label("bottom"));
-        layout.setLeft(new Label("left"));
-        layout.setCenter(new Label("center"));
+        HBox layout = new HBox();
+
+        layout.getChildren().add(new Label("first"));
+        layout.getChildren().add(new Label("second"));
+        layout.getChildren().add(new Label("third"));
 
         Scene view = new Scene(layout);
 
