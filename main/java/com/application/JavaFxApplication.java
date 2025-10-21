@@ -1,6 +1,7 @@
 package com.application;
 
 import javafx.application.Application;
+import javafx.application.Application.Parameters;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -17,17 +18,11 @@ public class JavaFxApplication extends Application {
 
     @Override
     public void start(Stage window) {
-        TextField leftText = new TextField("left");
-        TextField rightText = new TextField("right");
-        Button button = new Button("copy");
+        Parameters params = getParameters();
+        String organization = params.getNamed().get("organization");
+        String course = params.getNamed().get("course");
 
-        HBox componentGroup = new HBox();
-        componentGroup.setSpacing(20);
-        componentGroup.getChildren().addAll(leftText, button, rightText);
-
-        Scene view = new Scene(componentGroup);
-
-        window.setScene(view);
+        window.setTitle(organization + ": " + course);
         window.show();
     }
 
