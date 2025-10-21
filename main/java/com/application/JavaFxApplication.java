@@ -14,6 +14,7 @@ public class JavaFxApplication extends Application {
     @Override
     public void start(Stage window) {
         HBox layout = new HBox();
+        layout.setSpacing(10);
 
         layout.getChildren().add(new Label("first"));
         layout.getChildren().add(new Label("second"));
