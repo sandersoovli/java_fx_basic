@@ -3,6 +3,7 @@ package com.application;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.FlowPane;
 import javafx.stage.Stage;
 
@@ -10,18 +11,16 @@ public class JavaFxApplication extends Application {
 
     @Override
     public void start(Stage window) {
-        Button button1 = new Button("This is a first button");
-
-        Button button2 = new Button("This is a second button");
+        Button buttonComponent = new Button("This is a button");
+        Label textComponent = new Label("Text element");
 
         FlowPane componentGroup = new FlowPane();
-        componentGroup.getChildren().add(button1);
-        componentGroup.getChildren().add(button2);
+        componentGroup.getChildren().add(textComponent);
+        componentGroup.getChildren().add(buttonComponent);
 
-        Scene scene = new Scene(componentGroup, 300, 200);
+        Scene view = new Scene(componentGroup);
 
-        window.setScene(scene);
-        window.setTitle("Two Buttons Example");
+        window.setScene(view);
         window.show();
     }
 
