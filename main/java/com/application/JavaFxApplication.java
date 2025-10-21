@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.FlowPane;
 import javafx.stage.Stage;
 
@@ -11,14 +12,14 @@ public class JavaFxApplication extends Application {
 
     @Override
     public void start(Stage window) {
-        Button buttonComponent = new Button("This is a button");
-        Label textComponent = new Label("Text element");
+        BorderPane layout = new BorderPane();
+        layout.setTop(new Label("top"));
+        layout.setRight(new Label("right"));
+        layout.setBottom(new Label("bottom"));
+        layout.setLeft(new Label("left"));
+        layout.setCenter(new Label("center"));
 
-        FlowPane componentGroup = new FlowPane();
-        componentGroup.getChildren().add(textComponent);
-        componentGroup.getChildren().add(buttonComponent);
-
-        Scene view = new Scene(componentGroup);
+        Scene view = new Scene(layout);
 
         window.setScene(view);
         window.show();
